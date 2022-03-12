@@ -1,6 +1,6 @@
 User Model -- contains roll number, name sso.
 department -- id, name, contact details,
 Admins - mail id, departmeny assoiated with,
-Requirements - title, status(due/not due), department id, student id, comments (in case of dues)
+Requirements - title, status(due/not due), department id, comments (in case of dues)
 Queries model - Title, document id, status check, requirement id, date/time, comment thread
 document model - associated with a verification id, student-requireoiemnt id
