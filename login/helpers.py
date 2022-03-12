@@ -7,7 +7,7 @@ def perform_login(auth_code, redir, request):
     """Perform login with code and redir."""
 
     post_data = 'code=' + auth_code + '&redirect_uri=' + redir + '&grant_type=authorization_code'
-
+    print(post_data)
     # Get our access token
     response = requests.post(
         settings.SSO_TOKEN_URL,
@@ -41,10 +41,13 @@ def perform_login(auth_code, redir, request):
 
     username = str(profile_json['id'])
     roll_no = str(profile_json['roll_number'])
-
+    print("reached end")
     # Return the session id
+    print(username,roll_no)
     return Response({
         'sessionid': request.session.session_key,
         'username' : username,
         'roll_no' : roll_no,
     })
+
+    # return Response({'message': response_json['error']})

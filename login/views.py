@@ -3,7 +3,7 @@ from django.conf import settings
 from django.contrib.auth import logout
 from rest_framework import viewsets
 from rest_framework.response import Response
-from noduesapi.login.helpers import perform_login
+from login.helpers import perform_login
 
 class LoginViewSet(viewsets.ViewSet):
     """Login"""
