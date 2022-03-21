@@ -11,6 +11,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# Urls of admins
+ADMIN_URLS = ['library@iitb.ac.in']
+
 # SSO Config
 SSO_TOKEN_URL = 'https://gymkhana.iitb.ac.in/sso/oauth/token/'
 SSO_PROFILE_URL = 'https://gymkhana.iitb.ac.in/sso/user/api/user/?fields=first_name,last_name,type,profile_picture,sex,username,email,program,contacts,insti_address,secondary_emails,mobile,roll_number'
@@ -62,6 +65,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'corsheaders',
    'login',
+   'requirements'
 ]
 
 MIDDLEWARE = [
@@ -94,7 +98,17 @@ TEMPLATES = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL=True
+from pathlib import Path
 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # EMAIL settings
 EMAIL_HOST = 'smtp.gmail.com'
