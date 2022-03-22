@@ -35,7 +35,7 @@ class RequirementViewSet(viewsets.ViewSet):
         user_requirement_data = users_from_department.get_requirements()
         print(user_requirement_data)
         # Return the details and nested profile
-        # return Response({
-        #     'sessionid': request.session.session_key,
-        #     'requirements' : user_requirement_data.json(),
-        # })
+        return Response({
+            'sessionid': request.session.session_key,
+            'requirements' : user_requirement_data.json(),
+        })
